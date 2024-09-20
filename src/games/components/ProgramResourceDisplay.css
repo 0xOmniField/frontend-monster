@@ -1,0 +1,45 @@
+.program-resource-display-container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 16px;
+}
+
+.program-resource-display-image {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+}
+
+.program-resource-display-positive-text, 
+.program-resource-display-zero-text, 
+.program-resource-display-negative-text {
+    position: absolute;
+    top: 50%;
+    left: 28px;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    text-align: center;
+    line-height: 10px;
+    margin: 0px;
+    width: 28px;
+    height: 10px;
+    font-family: "mishmash";
+}
+
+.program-resource-display-positive-text {
+    color: rgb(85, 221, 85);
+}
+
+.program-resource-display-zero-text{
+    color: white;
+}
+
+.program-resource-display-negative-text {
+    color: rgb(220, 36, 36)
+}
