@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from "../../app/store";
-import { queryState, SERVER_TICK_TO_SECOND } from "../../games/request";
-import { ProgramModel, FilterModel, allResourcesToggleFilter, getResources, ResourceType, resourceTypes, ProgramType, getProgramName
+import { getConfig, SERVER_TICK_TO_SECOND } from "../../games/automata/request";
+import { ProgramModel, FilterModel, allResourcesToggleFilter, getCommonResources, getRareResources, ResourceType, allResourceTypes
  } from "./models";
 
 interface ProgramsState {
@@ -19,15 +19,16 @@ const initialState: ProgramsState = {
 function decodePrograms(programRaws: any) {
     const programs: ProgramModel[] = [];
     for(let i=0; i<programRaws.length; i++) {
-        const { duration, attributes} = programRaws[i];
-        const type = i as ProgramType;
         const program: ProgramModel = {
             index: i,
-            type,
-            processingTime: duration * SERVER_TICK_TO_SECOND,
+            type: i,
+            processingTime: programRaws[i][0] * SERVER_TICK_TO_SECOND,
             resources: 
-                getResources(attributes).filter(resource => resource.amount !== 0),
-            name: getProgramName(type),
+                [
+                    ...getCommonResources(programRaws[i][2]), 
+                    ...getRareResources(programRaws[i][1])
+                ].filter(resource => resource.amount !== 0),
+            name: programRaws[i][3],
         };
         
         programs.push(program);
@@ -57,8 +58,8 @@ export const programsSlice = createSlice({
     },
     extraReducers: (builder) => {
       builder
-        .addCase(queryState.fulfilled, (state, action) => {
-          state.programs = decodePrograms(action.payload.cards);
+        .addCase(getConfig.fulfilled, (state, action) => {
+          state.programs = decodePrograms(action.payload.modifiers);
         });
     }
 });
@@ -74,7 +75,7 @@ export const selectAllPrograms = (state: RootState) => state.automata.programs.p
 export const selectFilteredPrograms = (state: RootState) => 
     state.automata.programs.programs.filter(program =>
         selectIsAllResourcesToggled(state) || 
-        resourceTypes.every(type => 
+        allResourceTypes.every(type => 
             !selectIsResourceTypeToggled(type)(state) ||
             program.resources.some(resource => resource.type === type))
     );

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from "../../app/store";
-import { getConfig, sendTransaction, queryState } from "../../games/request"
-import { ResourceAmountPair, emptyResources } from "./models"
+import { getConfig, sendTransaction, queryState } from "../../games/automata/request"
+import { ResourceAmountPair, emptyCommonResources } from "./models"
 
 export enum UIState{
   Init,
@@ -13,9 +13,6 @@ export enum UIState{
   Guide,
   Creating,
   Reboot,
-  Withdraw,
-  Deposit,
-  Upgrade,
 }
 
 interface PropertiesState {
@@ -69,7 +66,7 @@ export const propertiesSlice = createSlice({
           state.uIState = UIState.Idle;
         }
         state.globalTimer = action.payload.globalTimer;
-        state.nonce = action.payload.nonce;
+        state.nonce = action.payload.player.nonce.toString();
         console.log("send transaction fulfilled");
       })
       .addCase(queryState.rejected, (state, action) => {
