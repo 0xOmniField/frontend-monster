@@ -23,14 +23,14 @@ jobs:
               with:
                   username: ${{ secrets.DOCKER_HUB_PASSWORD }}
                   password: ${{ secrets.DOCKER_HUB_USERNAME }}
-                  registry: "registry.eu-central-1.aliyuncs.com"
+                  registry: "registry.us-east-1.aliyuncs.com"
 
             - name: Build and push Docker image
               env:
                   COMMIT_SHA: ${{ steps.get-commit-sha.outputs.sha }}
 
               run: |
-                  IMAGE_URL="registry.eu-central-1.aliyuncs.com/omnifiled/frontend-monster:${COMMIT_SHA}"
+                  IMAGE_URL="registry.us-east-1.aliyuncs.com/omnifiled/frontend-monster:${COMMIT_SHA}"
                   echo $IMAGE_URL
                   docker build -t ${IMAGE_URL} -f Dockerfile.testnet .
                   docker push ${IMAGE_URL}
