@@ -1,6 +1,6 @@
 FROM node:20
 WORKDIR /app
 COPY . /app
-RUN echo "strict-ssl=false" >> .npmrc && npm install && npm run build
+RUN  npm install && npm run build
 EXPOSE 3000
 CMD ["npm", "run", "start"]
