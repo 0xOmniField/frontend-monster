@@ -22,8 +22,8 @@
   height: 512px;
   width: 550px;
   position: absolute;
-  right: 30px;
-  top: 30px;
+  right: 36px;
+  top: 44px;
 }
 
 .main-info-container {
@@ -137,7 +137,7 @@
   position: absolute;
   height: 259.4px;
   width: 295.96px;
-  left: 31px;
+  right: 30px;
 }
 
 .main-circle-container-new {
@@ -149,7 +149,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  animation: Disc 5s steps(30) infinite;
+  animation: Disc 1s steps(30);
 }
 
 .main-circle-background {
@@ -276,14 +276,13 @@
 
 .main-zombie-close-animation {
   position: absolute;
-  width: 762px;
-  height: 895px;
-  bottom: -448px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 508px;
+  height: 596px;
+  bottom: 0;
+  left: 290px;
   background-image: url("../images/Animations/ZombieClose/guanji_00.png");
-  background-size: auto;
-  animation: zombieClose 1s steps(20) infinite;
+  background-size: contain;
+  animation: zombieClose 1s steps(20);
 }
 
 @keyframes zombieOpen {
@@ -351,14 +350,13 @@
 
 .main-zombie-open-animation {
   position: absolute;
-  width: 762px;
-  height: 895px;
-  bottom: -448px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-image: url("../images/Animations/Pillars/guangzhu_00.png");
-  background-size: auto;
-  animation: zombieClose 1s steps(20) infinite;
+  width: 508px;
+  height: 596px;
+  bottom: 0;
+  left: 290px;
+  background-image: url("../images/Animations/ZombieOpen/kaiji_20.png");
+  background-size: contain;
+  animation: zombieClose 1s steps(20);
 }
 
 @keyframes pillars {
@@ -453,13 +451,331 @@
     background-image: url("../images/Animations/Pillars/guangzhu_29.png");
   }
 }
-.main-pillars-animation {
+.main-pillars {
   position: absolute;
-  width: 314px;
-  height: 616px;
-  top: 40%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-  background-size: cover;
+  left: 112px;
+  top: -2px;
+}
+.main-pillars-animation {
+  /* width: 315px;
+  height: 423px; */
+  width: 349px;
+  height: 432px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../images/Animations/Pillars/guangzhu_00.png");
   animation: pillars 5s steps(30) infinite;
+}
+
+.main-pillars-base {
+  position: absolute;
+  /* bottom: -238px; */
+  bottom: -180px;
+  background-image: url("../images/backgrounds/pillars_base.png");
+  /* width: 314px;
+  height: 372px; */
+  width: 343px;
+  height: 303px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.lighting-animation {
+  position: absolute;
+  right: 300px;
+  background-image: url("../images/Animations/Lighting/glow_00.png");
+  width: 632px;
+  height: 402px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: lighting 5s steps(23) infinite;
+}
+
+@keyframes lighting {
+  0% {
+    background-image: url("../images/Animations/Lighting/glow_00.png");
+  }
+  2.17% {
+    background-image: url("../images/Animations/Lighting/glow_01.png");
+  }
+  4.35% {
+    background-image: url("../images/Animations/Lighting/glow_02.png");
+  }
+  6.52% {
+    background-image: url("../images/Animations/Lighting/glow_03.png");
+  }
+  8.7% {
+    background-image: url("../images/Animations/Lighting/glow_04.png");
+  }
+  10.87% {
+    background-image: url("../images/Animations/Lighting/glow_05.png");
+  }
+  13.04% {
+    background-image: url("../images/Animations/Lighting/glow_06.png");
+  }
+  15.22% {
+    background-image: url("../images/Animations/Lighting/glow_07.png");
+  }
+  17.39% {
+    background-image: url("../images/Animations/Lighting/glow_08.png");
+  }
+  19.57% {
+    background-image: url("../images/Animations/Lighting/glow_09.png");
+  }
+  21.74% {
+    background-image: url("../images/Animations/Lighting/glow_10.png");
+  }
+  23.91% {
+    background-image: url("../images/Animations/Lighting/glow_11.png");
+  }
+  26.09% {
+    background-image: url("../images/Animations/Lighting/glow_12.png");
+  }
+  28.26% {
+    background-image: url("../images/Animations/Lighting/glow_13.png");
+  }
+  30.43% {
+    background-image: url("../images/Animations/Lighting/glow_14.png");
+  }
+  32.61% {
+    background-image: url("../images/Animations/Lighting/glow_15.png");
+  }
+  34.78% {
+    background-image: url("../images/Animations/Lighting/glow_16.png");
+  }
+  36.96% {
+    background-image: url("../images/Animations/Lighting/glow_17.png");
+  }
+  39.13% {
+    background-image: url("../images/Animations/Lighting/glow_18.png");
+  }
+  41.3% {
+    background-image: url("../images/Animations/Lighting/glow_19.png");
+  }
+  43.48% {
+    background-image: url("../images/Animations/Lighting/glow_20.png");
+  }
+  45.65% {
+    background-image: url("../images/Animations/Lighting/glow_21.png");
+  }
+  47.83% {
+    background-image: url("../images/Animations/Lighting/glow_22.png");
+  }
+  50% {
+    background-image: url("../images/Animations/Lighting/glow_23.png");
+  }
+  52.17% {
+    background-image: url("../images/Animations/Lighting/glow_24.png");
+  }
+  54.35% {
+    background-image: url("../images/Animations/Lighting/glow_25.png");
+  }
+  56.52% {
+    background-image: url("../images/Animations/Lighting/glow_26.png");
+  }
+  58.7% {
+    background-image: url("../images/Animations/Lighting/glow_27.png");
+  }
+  60.87% {
+    background-image: url("../images/Animations/Lighting/glow_28.png");
+  }
+  63.04% {
+    background-image: url("../images/Animations/Lighting/glow_29.png");
+  }
+  65.22% {
+    background-image: url("../images/Animations/Lighting/glow_30.png");
+  }
+  67.39% {
+    background-image: url("../images/Animations/Lighting/glow_31.png");
+  }
+  69.57% {
+    background-image: url("../images/Animations/Lighting/glow_32.png");
+  }
+  71.74% {
+    background-image: url("../images/Animations/Lighting/glow_33.png");
+  }
+  73.91% {
+    background-image: url("../images/Animations/Lighting/glow_34.png");
+  }
+  76.09% {
+    background-image: url("../images/Animations/Lighting/glow_35.png");
+  }
+  78.26% {
+    background-image: url("../images/Animations/Lighting/glow_36.png");
+  }
+  80.43% {
+    background-image: url("../images/Animations/Lighting/glow_37.png");
+  }
+  82.61% {
+    background-image: url("../images/Animations/Lighting/glow_38.png");
+  }
+  84.78% {
+    background-image: url("../images/Animations/Lighting/glow_39.png");
+  }
+  86.96% {
+    background-image: url("../images/Animations/Lighting/glow_40.png");
+  }
+  89.13% {
+    background-image: url("../images/Animations/Lighting/glow_41.png");
+  }
+  91.3% {
+    background-image: url("../images/Animations/Lighting/glow_42.png");
+  }
+  93.48% {
+    background-image: url("../images/Animations/Lighting/glow_43.png");
+  }
+  95.65% {
+    background-image: url("../images/Animations/Lighting/glow_44.png");
+  }
+  97.83% {
+    background-image: url("../images/Animations/Lighting/glow_45.png");
+  }
+  100% {
+    background-image: url("../images/Animations/Lighting/glow_45.png");
+  }
+}
+
+@keyframes lightingIn {
+  0% {
+    background-image: url("../images/Animations/Lighting/glow_00.png");
+  }
+  4.35% {
+    background-image: url("../images/Animations/Lighting/glow_01.png");
+  }
+  8.7% {
+    background-image: url("../images/Animations/Lighting/glow_02.png");
+  }
+  13.04% {
+    background-image: url("../images/Animations/Lighting/glow_03.png");
+  }
+  17.39% {
+    background-image: url("../images/Animations/Lighting/glow_04.png");
+  }
+  21.74% {
+    background-image: url("../images/Animations/Lighting/glow_05.png");
+  }
+  26.09% {
+    background-image: url("../images/Animations/Lighting/glow_06.png");
+  }
+  30.43% {
+    background-image: url("../images/Animations/Lighting/glow_07.png");
+  }
+  34.78% {
+    background-image: url("../images/Animations/Lighting/glow_08.png");
+  }
+  39.13% {
+    background-image: url("../images/Animations/Lighting/glow_09.png");
+  }
+  43.48% {
+    background-image: url("../images/Animations/Lighting/glow_10.png");
+  }
+  47.83% {
+    background-image: url("../images/Animations/Lighting/glow_11.png");
+  }
+  52.17% {
+    background-image: url("../images/Animations/Lighting/glow_12.png");
+  }
+  56.52% {
+    background-image: url("../images/Animations/Lighting/glow_13.png");
+  }
+  60.87% {
+    background-image: url("../images/Animations/Lighting/glow_14.png");
+  }
+  65.22% {
+    background-image: url("../images/Animations/Lighting/glow_15.png");
+  }
+  69.57% {
+    background-image: url("../images/Animations/Lighting/glow_16.png");
+  }
+  73.91% {
+    background-image: url("../images/Animations/Lighting/glow_17.png");
+  }
+  78.26% {
+    background-image: url("../images/Animations/Lighting/glow_18.png");
+  }
+  82.61% {
+    background-image: url("../images/Animations/Lighting/glow_19.png");
+  }
+  86.96% {
+    background-image: url("../images/Animations/Lighting/glow_20.png");
+  }
+  91.3% {
+    background-image: url("../images/Animations/Lighting/glow_21.png");
+  }
+  100% {
+    background-image: url("../images/Animations/Lighting/glow_22.png");
+  }
+}
+@keyframes lightingOut {
+  0% {
+    background-image: url("../images/Animations/Lighting/glow_23.png");
+  }
+  4.35% {
+    background-image: url("../images/Animations/Lighting/glow_24.png");
+  }
+  8.7% {
+    background-image: url("../images/Animations/Lighting/glow_25.png");
+  }
+  13.04% {
+    background-image: url("../images/Animations/Lighting/glow_26.png");
+  }
+  17.39% {
+    background-image: url("../images/Animations/Lighting/glow_27.png");
+  }
+  21.74% {
+    background-image: url("../images/Animations/Lighting/glow_28.png");
+  }
+  26.09% {
+    background-image: url("../images/Animations/Lighting/glow_29.png");
+  }
+  30.43% {
+    background-image: url("../images/Animations/Lighting/glow_30.png");
+  }
+  34.78% {
+    background-image: url("../images/Animations/Lighting/glow_31.png");
+  }
+  39.13% {
+    background-image: url("../images/Animations/Lighting/glow_32.png");
+  }
+  43.48% {
+    background-image: url("../images/Animations/Lighting/glow_33.png");
+  }
+  47.83% {
+    background-image: url("../images/Animations/Lighting/glow_34.png");
+  }
+  52.17% {
+    background-image: url("../images/Animations/Lighting/glow_35.png");
+  }
+  56.52% {
+    background-image: url("../images/Animations/Lighting/glow_36.png");
+  }
+  60.87% {
+    background-image: url("../images/Animations/Lighting/glow_37.png");
+  }
+  65.22% {
+    background-image: url("../images/Animations/Lighting/glow_38.png");
+  }
+  69.57% {
+    background-image: url("../images/Animations/Lighting/glow_39.png");
+  }
+  73.91% {
+    background-image: url("../images/Animations/Lighting/glow_40.png");
+  }
+  78.26% {
+    background-image: url("../images/Animations/Lighting/glow_41.png");
+  }
+  82.61% {
+    background-image: url("../images/Animations/Lighting/glow_42.png");
+  }
+  86.96% {
+    background-image: url("../images/Animations/Lighting/glow_43.png");
+  }
+  91.3% {
+    background-image: url("../images/Animations/Lighting/glow_44.png");
+  }
+  100% {
+    background-image: url("../images/Animations/Lighting/glow_45.png");
+  }
 }

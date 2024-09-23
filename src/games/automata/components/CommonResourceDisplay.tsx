@@ -1,5 +1,5 @@
 import React from "react";
-import background from "../images/backgrounds/top_bar.png";
+import background from "../images/backgrounds/top_bar_new.png";
 import { getNumberAbbr } from "../../../data/automata/models";
 import "./CommonResourceDisplay.css";
 

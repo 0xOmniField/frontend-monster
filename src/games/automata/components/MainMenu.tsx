@@ -136,7 +136,11 @@ const MainMenu = ({ localTimer }: Props) => {
   return (
     <>
       <div className="main">
-        <div className="main-pillars-animation" />
+        <div className="lighting-animation" />
+        <div className="main-pillars">
+          <div className="main-pillars-base" />
+          <div className="main-pillars-animation" />
+        </div>
         <Rocket />
         {!isNotSelectingCreature && (
           <div className="main-content">
@@ -146,7 +150,9 @@ const MainMenu = ({ localTimer }: Props) => {
               />
             </div>
             <div className="main-circle-container">
-              <div className="main-circle-container-new"></div>
+              {/* {!isSelectingUIState && (
+                <div className="main-circle-container-new"></div>
+              )} */}
               <MainMenuProgressBar
                 programName={currentProgramInfo.program?.name ?? ""}
                 remainTime={currentProgramInfo.remainTime}
@@ -196,7 +202,7 @@ const MainMenu = ({ localTimer }: Props) => {
           </div>
         )}
         {/* <div className="main-zombie-open-animation" /> */}
-        {/* <div className="main-zombie-close-animation" /> */}
+        <div className="main-zombie-close-animation" />
         {showSummaryMenu && <SummaryMenu />}
       </div>
     </>

@@ -1,8 +1,9 @@
-.top-rare-resources-container{
-    position: absolute;
-    display: flex;
-    top: 50px;
-    left: 260px;
-    width: 480px;
-    height: 40px;
+.top-rare-resources-container {
+  position: absolute;
+  display: flex;
+  top: 80px;
+  left: 50%;
+  margin-left: -240px;
+  width: 480px;
+  height: 40px;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import currentFrame from "../images/MainMenu/selecting_frame_new.png";
+import currentFrame from "../images/MainMenu/selecting_frame.png";
 import currentFrameStop from "../images/MainMenu/selecting_frame_red.png";
 import selectingFrame1 from "../images/MainMenu/select1.png";
 import selectingFrame2 from "../images/MainMenu/select2.png";

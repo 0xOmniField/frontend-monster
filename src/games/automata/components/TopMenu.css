@@ -5,9 +5,9 @@
   display: flex;
   font-size: 24px;
   z-index: 10;
-  background-image: url("../images/backgrounds/top_frame.png");
+  /* background-image: url("../images/backgrounds/top_frame.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: contain; */
 }
 
 .top-left,
@@ -17,23 +17,23 @@
   background-size: contain;
 }
 
-/* .top-left {
-  width: 480px;
+.top-left {
+  width: 961px;
   height: 110px;
-  background-image: url("../images/backgrounds/top_left.png");
+  background-image: url("../images/backgrounds/top_left_new.png");
   background-repeat: no-repeat;
 }
 
 .top-right {
-  width: 480px;
+  width: 961px;
   height: 110px;
-  background-image: url("../images/backgrounds/top_right.png");
+  background-image: url("../images/backgrounds/top_right_new.png");
   background-repeat: no-repeat;
 }
 
 .top-middle {
   flex-grow: 1;
   height: 110px;
-  background-image: url("../images/backgrounds/top_mid.png");
+  /* background-image: url("../images/backgrounds/top_mid.png"); */
   background-repeat: repeat-x;
-} */
+}
