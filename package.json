@@ -46,7 +46,7 @@
   },
   "scripts": {
     "start": "npx react-app-rewired start",
-    "build": "npx react-app-rewired build",
+    "build": "npx react-app-rewired build && echo 'Compiled successfully'",
     "test": "npx react-app-rewired test",
     "eject": "npx react-app-rewired eject",
     "publish": "sh publish.sh",
