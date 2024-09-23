@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import circleBackground from "../images/backgrounds/circle.png";
+import circleBackground from "../images/backgrounds/circle_new.png";
 import MainMenuSelectingFrame from "./MainMenuSelectingFrame";
 import MainMenuProgram from "./MainMenuProgram";
 import ConfirmButton from "./Buttons/ConfirmButton";
@@ -134,64 +134,72 @@ const MainMenu = ({ localTimer }: Props) => {
   );
 
   return (
-    <div className="main">
-      <Rocket />
-      {!isNotSelectingCreature && (
-        <div className="main-content">
-          <div className="main-info-container">
-            <DiffResourcesInfo diffResources={selectedCreatureDiffResources} />
-          </div>
-          <div className="main-circle-container">
-            <MainMenuProgressBar
-              programName={currentProgramInfo.program?.name ?? ""}
-              remainTime={currentProgramInfo.remainTime}
-              progress={currentProgramInfo.progress}
-              iconPath={getCreatureIconPath(selectedCreature.creatureType)}
-              isCreating={isCreatingUIState}
-              showAnimation={showUnlockAnimation}
-            />
-            <img src={circleBackground} className="main-circle-background" />
-            <MainMenuSelectingFrame
-              order={currentProgramInfo.index}
-              isCurrentProgram={!isSelectingUIState}
-              isStop={selectedCreature.isProgramStop}
-            />
-            {showUnlockAnimation && (
-              <div className="main-bot-creating-animation" />
-            )}
-            {selectedCreaturePrograms.map((program, index) => (
-              <MainMenuProgram
-                key={index}
-                isCurrent={
-                  !isSelectingUIState && currentProgramInfo.index == index
-                }
+    <>
+      <div className="main">
+        <div className="main-pillars-animation" />
+        <Rocket />
+        {!isNotSelectingCreature && (
+          <div className="main-content">
+            <div className="main-info-container">
+              <DiffResourcesInfo
+                diffResources={selectedCreatureDiffResources}
+              />
+            </div>
+            <div className="main-circle-container">
+              <div className="main-circle-container-new"></div>
+              <MainMenuProgressBar
+                programName={currentProgramInfo.program?.name ?? ""}
+                remainTime={currentProgramInfo.remainTime}
+                progress={currentProgramInfo.progress}
+                iconPath={getCreatureIconPath(selectedCreature.creatureType)}
+                isCreating={isCreatingUIState}
+                showAnimation={showUnlockAnimation}
+              />
+              <div className="main-circle-background"></div>
+              <MainMenuSelectingFrame
+                order={currentProgramInfo.index}
+                isCurrentProgram={!isSelectingUIState}
                 isStop={selectedCreature.isProgramStop}
-                order={index}
-                program={program}
-                showingAnimation={isSelectingUIState}
               />
-            ))}
-            <MainMenuWarning />
-            {showConfirmButton && (
-              <ConfirmButton
-                isDisabled={!enableConfirmButton}
-                onClick={() => onClickConfirm()}
-              />
-            )}
-            {showUnlockButton && (
-              <UnlockButton
-                isDisabled={!enableUnlockButton}
-                onClick={() => onClickUnlock()}
-              />
-            )}
-            {showRebootButton && (
-              <RebootButton onClick={() => onClickReboot()} />
-            )}
+              {showUnlockAnimation && (
+                <div className="main-bot-creating-animation" />
+              )}
+              {selectedCreaturePrograms.map((program, index) => (
+                <MainMenuProgram
+                  key={index}
+                  isCurrent={
+                    !isSelectingUIState && currentProgramInfo.index == index
+                  }
+                  isStop={selectedCreature.isProgramStop}
+                  order={index}
+                  program={program}
+                  showingAnimation={isSelectingUIState}
+                />
+              ))}
+              <MainMenuWarning />
+              {showConfirmButton && (
+                <ConfirmButton
+                  isDisabled={!enableConfirmButton}
+                  onClick={() => onClickConfirm()}
+                />
+              )}
+              {showUnlockButton && (
+                <UnlockButton
+                  isDisabled={!enableUnlockButton}
+                  onClick={() => onClickUnlock()}
+                />
+              )}
+              {showRebootButton && (
+                <RebootButton onClick={() => onClickReboot()} />
+              )}
+            </div>
           </div>
-        </div>
-      )}
-      {showSummaryMenu && <SummaryMenu />}
-    </div>
+        )}
+        {/* <div className="main-zombie-open-animation" /> */}
+        {/* <div className="main-zombie-close-animation" /> */}
+        {showSummaryMenu && <SummaryMenu />}
+      </div>
+    </>
   );
 };
 

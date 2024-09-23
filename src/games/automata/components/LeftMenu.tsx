@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import leftMiddleBar from "../images/backgrounds/left_middle_bar.png";
 import leftCornerBar from "../images/backgrounds/left_corner_bar.png";
 import "./LeftMenu.css";
@@ -30,7 +30,9 @@ const LeftMenu = ({ localTimer }: Props) => {
     }
   };
   const creatureGridElementWidth = 75;
-  const creatureGridElementHeight = 90;
+  const creatureGridElementHeight = useMemo(() => {
+    return creatureGridHeight >= 860 ? 99 : 92;
+  }, [creatureGridHeight]);
   const creatureGridColumnCount = 2;
   const creatureGridRowCount = Math.floor(
     creatureGridHeight / creatureGridElementHeight
@@ -75,9 +77,10 @@ const LeftMenu = ({ localTimer }: Props) => {
 
   return (
     <div className="left">
-      <div className="left-top"></div>
+      <div className="new_left_top"></div>
+      {/* <div className="left-top"></div>
       <div className="left-middle"></div>
-      <div className="left-bottom"></div>
+      <div className="left-bottom"></div> */}
 
       <div ref={creatureGridRef} className="left-creature-grid">
         <Grid
@@ -96,8 +99,8 @@ const LeftMenu = ({ localTimer }: Props) => {
         />
       </div>
 
-      <img src={leftMiddleBar} className="left-middle-bar" />
-      <img src={leftCornerBar} className="left-corner-bar" />
+      {/* <img src={leftMiddleBar} className="left-middle-bar" />
+      <img src={leftCornerBar} className="left-corner-bar" /> */}
       <div className="left-creature-page-selector">
         <PageSelector
           currentPage={currentPage}

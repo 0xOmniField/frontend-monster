@@ -93,7 +93,9 @@ const Gameplay = () => {
         <LeftMenu localTimer={localTimer} />
         <MainMenu localTimer={localTimer} />
         <RightMenu />
+        <div className="bottom-menu"></div>
       </div>
+
       {showGuidePopup && <GuidePopup />}
     </>
   );

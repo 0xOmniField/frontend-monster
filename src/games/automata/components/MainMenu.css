@@ -1,79 +1,465 @@
 .main {
-    height: 100%;
-    width: calc(100% - 190px * 2);
-    flex: 1;
-    background-color: lightgreen;
-    background-image: url('../images/backgrounds/menu_bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    position: relative;
-    z-index: 3;
+  height: calc(100% - 50px);
+  width: calc(100% - 190px * 2);
+  flex: 1;
+  /* background-color: lightgreen; */
+  /* background-image: url('../images/backgrounds/menu_bg.png'); */
+  background-image: url("../images/backgrounds/center_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-size: 24px;
+  position: relative;
+  z-index: 3;
 }
 
 .main-content {
-    width: fit-content;
-    height: 512px;
-    width: 550px;
-    position: relative;
+  width: fit-content;
+  height: 512px;
+  width: 550px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
 }
 
-.main-info-container{
-    position: absolute;
-    height: 125px;
-    width: 203px;
+.main-info-container {
+  position: absolute;
+  height: 125px;
+  width: 203px;
 }
 
 .main-info-background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+@keyframes Disc {
+  0% {
+    background-image: url("../images/Animations/Disc/yuanpan_00.png");
+  }
+  3.45% {
+    background-image: url("../images/Animations/Disc/yuanpan_01.png");
+  }
+  6.9% {
+    background-image: url("../images/Animations/Disc/yuanpan_02.png");
+  }
+  10.35% {
+    background-image: url("../images/Animations/Disc/yuanpan_03.png");
+  }
+  13.8% {
+    background-image: url("../images/Animations/Disc/yuanpan_04.png");
+  }
+  17.25% {
+    background-image: url("../images/Animations/Disc/yuanpan_05.png");
+  }
+  20.7% {
+    background-image: url("../images/Animations/Disc/yuanpan_06.png");
+  }
+  24.15% {
+    background-image: url("../images/Animations/Disc/yuanpan_07.png");
+  }
+  27.6% {
+    background-image: url("../images/Animations/Disc/yuanpan_08.png");
+  }
+  31.05% {
+    background-image: url("../images/Animations/Disc/yuanpan_09.png");
+  }
+  34.5% {
+    background-image: url("../images/Animations/Disc/yuanpan_10.png");
+  }
+  37.95% {
+    background-image: url("../images/Animations/Disc/yuanpan_11.png");
+  }
+  41.4% {
+    background-image: url("../images/Animations/Disc/yuanpan_12.png");
+  }
+  44.85% {
+    background-image: url("../images/Animations/Disc/yuanpan_13.png");
+  }
+  48.3% {
+    background-image: url("../images/Animations/Disc/yuanpan_14.png");
+  }
+  51.75% {
+    background-image: url("../images/Animations/Disc/yuanpan_15.png");
+  }
+  55.2% {
+    background-image: url("../images/Animations/Disc/yuanpan_16.png");
+  }
+  58.65% {
+    background-image: url("../images/Animations/Disc/yuanpan_17.png");
+  }
+  62.1% {
+    background-image: url("../images/Animations/Disc/yuanpan_18.png");
+  }
+  65.55% {
+    background-image: url("../images/Animations/Disc/yuanpan_19.png");
+  }
+  69% {
+    background-image: url("../images/Animations/Disc/yuanpan_20.png");
+  }
+  72.45% {
+    background-image: url("../images/Animations/Disc/yuanpan_21.png");
+  }
+  75.9% {
+    background-image: url("../images/Animations/Disc/yuanpan_22.png");
+  }
+  79.35% {
+    background-image: url("../images/Animations/Disc/yuanpan_23.png");
+  }
+  82.8% {
+    background-image: url("../images/Animations/Disc/yuanpan_24.png");
+  }
+  86.25% {
+    background-image: url("../images/Animations/Disc/yuanpan_25.png");
+  }
+  89.7% {
+    background-image: url("../images/Animations/Disc/yuanpan_26.png");
+  }
+  93.15% {
+    background-image: url("../images/Animations/Disc/yuanpan_27.png");
+  }
+  96.6% {
+    background-image: url("../images/Animations/Disc/yuanpan_28.png");
+  }
+  100% {
+    background-image: url("../images/Animations/Disc/yuanpan_29.png");
+  }
+}
 .main-circle-container {
-    position: absolute;
-    height: 486px;
-    width: 488px;
-    left: 31px;
+  position: absolute;
+  height: 259.4px;
+  width: 295.96px;
+  left: 31px;
+}
+
+.main-circle-container-new {
+  position: absolute;
+  width: 366px;
+  height: 393px;
+  left: -57px;
+  top: -48px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  animation: Disc 5s steps(30) infinite;
 }
 
 .main-circle-background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../images/backgrounds/circle_new.png");
+  background-size: contain;
+  /* background-image: url("../images/Animations/Disc/yuanpan_00.png"); */
+  /* background-size: 295.96px; */
+  /* animation: Disc 5s steps(30) infinite; */
+  background-repeat: no-repeat;
 }
 
 @keyframes unlockFrames {
-    0% { background-image: url('../images/Animations/Unlocks/unlock_animation_01.png'); }
-    11% { background-image: url('../images/Animations/Unlocks/unlock_animation_02.png'); }
-    22% { background-image: url('../images/Animations/Unlocks/unlock_animation_03.png'); }
-    33% { background-image: url('../images/Animations/Unlocks/unlock_animation_04.png'); }
-    44% { background-image: url('../images/Animations/Unlocks/unlock_animation_05.png'); }
-    56% { background-image: url('../images/Animations/Unlocks/unlock_animation_06.png'); }
-    67% { background-image: url('../images/Animations/Unlocks/unlock_animation_07.png'); }
-    78% { background-image: url('../images/Animations/Unlocks/unlock_animation_08.png'); }
-    89% { background-image: url('../images/Animations/Unlocks/unlock_animation_09.png'); }
-    100% { background-image: url('../images/Animations/Unlocks/unlock_animation_10.png'); }
+  0% {
+    background-image: url("../images/Animations/Unlocks/unlock_animation_01.png");
+  }
+  11% {
+    background-image: url("../images/Animations/Unlocks/unlock_animation_02.png");
+  }
+  22% {
+    background-image: url("../images/Animations/Unlocks/unlock_animation_03.png");
+  }
+  33% {
+    background-image: url("../images/Animations/Unlocks/unlock_animation_04.png");
+  }
+  44% {
+    background-image: url("../images/Animations/Unlocks/unlock_animation_05.png");
+  }
+  56% {
+    background-image: url("../images/Animations/Unlocks/unlock_animation_06.png");
+  }
+  67% {
+    background-image: url("../images/Animations/Unlocks/unlock_animation_07.png");
+  }
+  78% {
+    background-image: url("../images/Animations/Unlocks/unlock_animation_08.png");
+  }
+  89% {
+    background-image: url("../images/Animations/Unlocks/unlock_animation_09.png");
+  }
+  100% {
+    background-image: url("../images/Animations/Unlocks/unlock_animation_10.png");
+  }
 }
 
 .main-bot-creating-animation {
-    position: absolute;
-    width: 390px;
-    height: 390px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-size: cover;
-    animation: unlockFrames 1s steps(11);
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  animation: unlockFrames 1s steps(11);
+}
+
+@keyframes zombieClose {
+  0% {
+    background-image: url("../images/Animations/ZombieClose/guanji_00.png");
+  }
+  5.26% {
+    background-image: url("../images/Animations/ZombieClose/guanji_01.png");
+  }
+  10.53% {
+    background-image: url("../images/Animations/ZombieClose/guanji_02.png");
+  }
+  15.79% {
+    background-image: url("../images/Animations/ZombieClose/guanji_03.png");
+  }
+  21.05% {
+    background-image: url("../images/Animations/ZombieClose/guanji_04.png");
+  }
+  26.32% {
+    background-image: url("../images/Animations/ZombieClose/guanji_05.png");
+  }
+  31.58% {
+    background-image: url("../images/Animations/ZombieClose/guanji_06.png");
+  }
+  36.84% {
+    background-image: url("../images/Animations/ZombieClose/guanji_07.png");
+  }
+  42.11% {
+    background-image: url("../images/Animations/ZombieClose/guanji_08.png");
+  }
+  47.37% {
+    background-image: url("../images/Animations/ZombieClose/guanji_09.png");
+  }
+  52.63% {
+    background-image: url("../images/Animations/ZombieClose/guanji_10.png");
+  }
+  57.89% {
+    background-image: url("../images/Animations/ZombieClose/guanji_11.png");
+  }
+  63.16% {
+    background-image: url("../images/Animations/ZombieClose/guanji_12.png");
+  }
+  68.42% {
+    background-image: url("../images/Animations/ZombieClose/guanji_13.png");
+  }
+  73.68% {
+    background-image: url("../images/Animations/ZombieClose/guanji_14.png");
+  }
+  78.95% {
+    background-image: url("../images/Animations/ZombieClose/guanji_15.png");
+  }
+  84.21% {
+    background-image: url("../images/Animations/ZombieClose/guanji_16.png");
+  }
+  89.47% {
+    background-image: url("../images/Animations/ZombieClose/guanji_17.png");
+  }
+  94.74% {
+    background-image: url("../images/Animations/ZombieClose/guanji_18.png");
+  }
+  100% {
+    background-image: url("../images/Animations/ZombieClose/guanji_19.png");
+  }
+}
+
+.main-zombie-close-animation {
+  position: absolute;
+  width: 762px;
+  height: 895px;
+  bottom: -448px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../images/Animations/ZombieClose/guanji_00.png");
+  background-size: auto;
+  animation: zombieClose 1s steps(20) infinite;
+}
+
+@keyframes zombieOpen {
+  0% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_20.png");
+  }
+  5.26% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_21.png");
+  }
+  12.53% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_22.png");
+  }
+  15.79% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_23.png");
+  }
+  21.25% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_24.png");
+  }
+  26.32% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_25.png");
+  }
+  31.58% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_26.png");
+  }
+  36.84% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_27.png");
+  }
+  42.11% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_28.png");
+  }
+  47.37% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_29.png");
+  }
+  52.63% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_30.png");
+  }
+  57.89% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_31.png");
+  }
+  63.36% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_32.png");
+  }
+  68.42% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_33.png");
+  }
+  73.68% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_34.png");
+  }
+  78.95% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_35.png");
+  }
+  84.23% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_36.png");
+  }
+  89.47% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_37.png");
+  }
+  94.74% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_38.png");
+  }
+  100% {
+    background-image: url("../images/Animations/ZombieOpen/kaiji_39.png");
+  }
+}
+
+.main-zombie-open-animation {
+  position: absolute;
+  width: 762px;
+  height: 895px;
+  bottom: -448px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../images/Animations/Pillars/guangzhu_00.png");
+  background-size: auto;
+  animation: zombieClose 1s steps(20) infinite;
+}
+
+@keyframes pillars {
+  0% {
+    background-image: url("../images/Animations/Pillars/guangzhu_00.png");
+  }
+  3.45% {
+    background-image: url("../images/Animations/Pillars/guangzhu_01.png");
+  }
+  6.9% {
+    background-image: url("../images/Animations/Pillars/guangzhu_02.png");
+  }
+  10.35% {
+    background-image: url("../images/Animations/Pillars/guangzhu_03.png");
+  }
+  13.8% {
+    background-image: url("../images/Animations/Pillars/guangzhu_04.png");
+  }
+  17.25% {
+    background-image: url("../images/Animations/Pillars/guangzhu_05.png");
+  }
+  20.7% {
+    background-image: url("../images/Animations/Pillars/guangzhu_06.png");
+  }
+  24.15% {
+    background-image: url("../images/Animations/Pillars/guangzhu_07.png");
+  }
+  27.6% {
+    background-image: url("../images/Animations/Pillars/guangzhu_08.png");
+  }
+  31.05% {
+    background-image: url("../images/Animations/Pillars/guangzhu_09.png");
+  }
+  34.5% {
+    background-image: url("../images/Animations/Pillars/guangzhu_10.png");
+  }
+  37.95% {
+    background-image: url("../images/Animations/Pillars/guangzhu_11.png");
+  }
+  41.4% {
+    background-image: url("../images/Animations/Pillars/guangzhu_12.png");
+  }
+  44.85% {
+    background-image: url("../images/Animations/Pillars/guangzhu_13.png");
+  }
+  48.3% {
+    background-image: url("../images/Animations/Pillars/guangzhu_14.png");
+  }
+  51.75% {
+    background-image: url("../images/Animations/Pillars/guangzhu_15.png");
+  }
+  55.2% {
+    background-image: url("../images/Animations/Pillars/guangzhu_16.png");
+  }
+  58.65% {
+    background-image: url("../images/Animations/Pillars/guangzhu_17.png");
+  }
+  62.1% {
+    background-image: url("../images/Animations/Pillars/guangzhu_18.png");
+  }
+  65.55% {
+    background-image: url("../images/Animations/Pillars/guangzhu_19.png");
+  }
+  69% {
+    background-image: url("../images/Animations/Pillars/guangzhu_20.png");
+  }
+  72.45% {
+    background-image: url("../images/Animations/Pillars/guangzhu_21.png");
+  }
+  75.9% {
+    background-image: url("../images/Animations/Pillars/guangzhu_22.png");
+  }
+  79.35% {
+    background-image: url("../images/Animations/Pillars/guangzhu_23.png");
+  }
+  82.8% {
+    background-image: url("../images/Animations/Pillars/guangzhu_24.png");
+  }
+  86.25% {
+    background-image: url("../images/Animations/Pillars/guangzhu_25.png");
+  }
+  89.7% {
+    background-image: url("../images/Animations/Pillars/guangzhu_26.png");
+  }
+  93.15% {
+    background-image: url("../images/Animations/Pillars/guangzhu_27.png");
+  }
+  96.6% {
+    background-image: url("../images/Animations/Pillars/guangzhu_28.png");
+  }
+  100% {
+    background-image: url("../images/Animations/Pillars/guangzhu_29.png");
+  }
+}
+.main-pillars-animation {
+  position: absolute;
+  width: 314px;
+  height: 616px;
+  top: 40%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  animation: pillars 5s steps(30) infinite;
 }

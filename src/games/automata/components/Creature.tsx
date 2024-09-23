@@ -1,8 +1,11 @@
 import React from "react";
 import "./Creature.css";
-import creatureBackground from "../images/backgrounds/creature_frame.png";
-import creatureSelectingFrame from "../images/backgrounds/robot_select.png";
-import creatureLock from "../images/backgrounds/robot_lock.png";
+// import creatureBackground from "../images/backgrounds/creature_frame.png";
+// import creatureSelectingFrame from "../images/backgrounds/robot_select.png";
+// import creatureLock from "../images/backgrounds/robot_lock.png";
+import creatureBackground from "../images/backgrounds/creature_frame_new.png";
+import creatureSelectingFrame from "../images/backgrounds/robot_select_new.png";
+import creatureLock from "../images/backgrounds/robot_lock_new.png";
 import { UIState, setUIState } from "../../../data/automata/properties";
 import {
   setSelectedCreatureIndex,

@@ -28,7 +28,7 @@ const Program = ({ program, onSelect }: Props) => {
       />
       <div className="program-resource-grid">
         <Grid
-          elementWidth={44}
+          elementWidth={38}
           elementHeight={16}
           columnCount={2}
           rowCount={4}

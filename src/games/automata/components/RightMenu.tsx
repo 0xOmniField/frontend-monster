@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import rightCornerBar from "../images/backgrounds/right_corner_bar.png";
 import "./RightMenu.css";
 import PageSelector from "./PageSelector";
@@ -29,11 +29,13 @@ const RightMenu = () => {
     }
   };
   const programGridElementWidth = 170;
-  const programGridElementHeight = 95;
+  const programGridElementHeight = useMemo(() => {
+    return programGridHeight >= 860 ? 99 : 92;
+  }, [programGridHeight]);
   const programGridColumnCount = 1;
-  const programGridRowCount = Math.floor(
-    programGridHeight / programGridElementHeight
-  );
+  const programGridRowCount = useMemo(() => {
+    return Math.floor(programGridHeight / programGridElementHeight);
+  }, [programGridHeight, programGridElementHeight]);
   const amountPerPage = programGridColumnCount * programGridRowCount;
   const currentPage = useAppSelector(selectCurrentPage);
   const programsBeforePaging = useAppSelector(selectFilteredPrograms);
@@ -71,10 +73,11 @@ const RightMenu = () => {
 
   return (
     <div className="right">
-      <div className="right-top"></div>
+      <div className="new_right_top"></div>
+      {/* <div className="right-top"></div>
       <div className="right-middle"></div>
-      <div className="right-bottom"></div>
-      <img src={rightCornerBar} className="right-corner-bar" />
+      <div className="right-bottom"></div> */}
+      {/* <img src={rightCornerBar} className="right-corner-bar" /> */}
       <div ref={programGridRef} className="right-program-grid">
         <Grid
           elementWidth={programGridElementWidth}
