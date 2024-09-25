@@ -426,7 +426,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-40%, -40%);
-  /* background-image: url("../images/Animations/ZombieCircle/xunhuan_00.png"); */
   background-size: contain;
   /* opacity: 0; */
   &.show {
@@ -508,10 +507,10 @@
   background-image: url("../images/Animations/ZombieOpen/kaiji_20.png");
   background-size: contain;
   &.show {
-    animation: zombieClose 0.66s steps(20);
-  }
-  &.hidden {
-    opacity: 0;
+    /* animation: zombieClose 0.66s steps(20); */
+    animation: zombieOpen 0.66s steps(20) forwards,
+      zombieCircle 1.33s steps(40) 0.66s 3 forwards,
+      zombieClose 0.66s steps(20) 4.65s forwards; /* zombieClose 延迟 6.5 秒执行 */
   }
 }
 

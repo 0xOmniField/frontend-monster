@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import circleBackground from "../images/backgrounds/circle_new.png";
 import MainMenuSelectingFrame from "./MainMenuSelectingFrame";
 import MainMenuProgram from "./MainMenuProgram";
@@ -33,6 +33,7 @@ import {
   selectSelectedCreatureListIndex,
   selectSelectedCreatureCurrentProgram,
   selectSelectedCreatureSelectingProgram,
+  selectSelectedCreatureIndex,
 } from "../../../data/automata/creatures";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import MainMenuWarning from "./MainMenuWarning";
@@ -47,9 +48,7 @@ const MainMenu = ({ localTimer }: Props) => {
   const lightingLeftRef = useRef<HTMLDivElement>(null);
   const lightingRightRef = useRef<HTMLDivElement>(null);
   const discRef = useRef<HTMLDivElement>(null);
-  const zombieOpenRef = useRef<HTMLDivElement>(null);
-  const zombieCloseRef = useRef<HTMLDivElement>(null);
-  const zombieCircleRef = useRef<HTMLDivElement>(null);
+  const zombieRef = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const l2account = useAppSelector(selectL2Account);
   const uIState = useAppSelector(selectUIState);
@@ -113,7 +112,6 @@ const MainMenu = ({ localTimer }: Props) => {
               if (queryState.fulfilled.match(action)) {
                 dispatch(setUIState({ uIState: UIState.Idle }));
                 dispatch(clearRebootCreature({}));
-                triggerAnimation();
               } else {
                 dispatch(setUIState({ uIState: UIState.Idle }));
                 dispatch(clearRebootCreature({}));
@@ -150,27 +148,46 @@ const MainMenu = ({ localTimer }: Props) => {
     }, 0);
 
     setTimeout(() => {
-      zombieOpenRef.current?.classList.add("show");
-    }, 700);
-
-    setTimeout(() => {
-      zombieCircleRef.current?.classList.add("show");
-    }, 1400);
+      zombieRef.current?.classList.add("show");
+    }, 700); // 20帧，假设每帧约10ms
 
     setTimeout(() => {
       lightingLeftRef?.current?.classList?.add("show");
-    }, 4470);
-
-    setTimeout(() => {
-      zombieCircleRef.current?.classList.remove("show");
-      zombieCloseRef.current?.classList.add("show");
-    }, 5370);
+    }, 4470); // 40帧
   };
 
+  const selectedCreatureIndex = useAppSelector(selectSelectedCreatureIndex);
+  const [lastProgramInfo, setLastProgramInfo] = useState(currentProgramInfo);
+  const [lastSelectedCreatureIndex, setLastSelectedCreatureIndex] = useState(
+    selectedCreatureIndex
+  );
+
+  useEffect(() => {
+    setLastSelectedCreatureIndex(selectedCreatureIndex);
+    setLastProgramInfo(currentProgramInfo);
+  }, [selectedCreatureIndex]);
+
+  useEffect(() => {
+    if (
+      !isSelectingUIState &&
+      selectedCreatureIndex == lastSelectedCreatureIndex &&
+      lastProgramInfo.index != currentProgramInfo.index
+    ) {
+      setLastProgramInfo(currentProgramInfo);
+      triggerAnimation();
+    }
+  }, [
+    currentProgramInfo.remainTime,
+    isSelectingUIState,
+    selectedCreatureIndex,
+    lastSelectedCreatureIndex,
+    lastProgramInfo.index,
+    currentProgramInfo.index,
+  ]);
+  // console.log(222, currentProgramInfo);
   return (
     <>
       <div className="main">
-        {/* <div className="main-zombie-open-animation" /> */}
         <div className="main-pillars">
           <div className="main-pillars-base" />
           <div className="main-pillars-animation" />
@@ -182,43 +199,13 @@ const MainMenu = ({ localTimer }: Props) => {
             lightingRightRef?.current?.classList?.remove("show");
           }}
         />
-        <div
-          ref={zombieOpenRef}
-          className={`main-zombie-open-animation`}
-          onAnimationEnd={() => {
-            zombieOpenRef?.current?.classList?.remove("show");
-            zombieOpenRef?.current?.classList?.add("hidden");
-            // if (zombieRef.current) {
-            //   zombieRef.current.className = "main-zombie-open-animation";
-            // }
-          }}
-        />
-        <div
-          ref={zombieCloseRef}
-          className={`main-zombie-close-animation`}
-          onAnimationEnd={() => {
-            zombieCloseRef?.current?.classList?.remove("show");
-            zombieOpenRef?.current?.classList?.remove("hidden");
-            // if (zombieRef.current) {
-            //   zombieRef.current.className = "main-zombie-open-animation";
-            // }
-          }}
-        />
-        <div
-          ref={zombieCircleRef}
-          className={`main-zombie-circle-animation`}
-          onAnimationEnd={() => {
-            // zombieCircleRef?.current?.classList?.remove("show");
-            // if (zombieRef.current) {
-            //   zombieRef.current.className = "main-zombie-open-animation";
-            // }
-          }}
-        />
+        <div ref={zombieRef} className={`main-zombie-open-animation`} />
         <div
           ref={lightingLeftRef}
           className={`lighting-animation-left`}
           onAnimationEnd={() => {
             lightingLeftRef?.current?.classList?.remove("show");
+            zombieRef?.current?.classList?.remove("show");
           }}
         />
 
