@@ -23,7 +23,7 @@
   width: 550px;
   position: absolute;
   right: 36px;
-  top: 44px;
+  top: 88px;
 }
 
 .main-info-container {
@@ -133,6 +133,7 @@
     background-image: url("../images/Animations/Disc/yuanpan_29.png");
   }
 }
+
 .main-circle-container {
   position: absolute;
   height: 259.4px;
@@ -148,8 +149,13 @@
   top: -48px;
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: 1;
-  animation: Disc 1s steps(30);
+  z-index: 0;
+  opacity: 0;
+  &.show {
+    animation: Disc 1s steps(30);
+    z-index: 1;
+    opacity: 1;
+  }
 }
 
 .main-circle-background {
@@ -278,11 +284,155 @@
   position: absolute;
   width: 508px;
   height: 596px;
-  bottom: 0;
-  left: 290px;
-  background-image: url("../images/Animations/ZombieClose/guanji_00.png");
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -40%);
+  /* background-image: url("../images/Animations/ZombieClose/guanji_00.png"); */
   background-size: contain;
-  animation: zombieClose 1s steps(20);
+  /* opacity: 0; */
+  &.show {
+    animation: zombieClose 0.66s steps(20);
+    /* opacity: 1; */
+  }
+}
+
+@keyframes zombieCircle {
+  0% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_00.png");
+  }
+  2.56% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_01.png");
+  }
+  5.13% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_02.png");
+  }
+  7.69% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_03.png");
+  }
+  10.26% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_04.png");
+  }
+  12.82% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_05.png");
+  }
+  15.38% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_06.png");
+  }
+  17.95% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_07.png");
+  }
+  20.51% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_08.png");
+  }
+  23.08% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_09.png");
+  }
+  25.64% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_10.png");
+  }
+  28.21% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_11.png");
+  }
+  30.77% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_12.png");
+  }
+  33.33% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_13.png");
+  }
+  35.9% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_14.png");
+  }
+  38.46% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_15.png");
+  }
+  41.03% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_16.png");
+  }
+  43.59% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_17.png");
+  }
+  46.15% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_18.png");
+  }
+  48.72% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_19.png");
+  }
+  51.28% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_20.png");
+  }
+  53.85% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_21.png");
+  }
+  56.41% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_22.png");
+  }
+  58.97% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_23.png");
+  }
+  61.54% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_24.png");
+  }
+  64.1% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_25.png");
+  }
+  66.67% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_26.png");
+  }
+  69.23% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_27.png");
+  }
+  71.79% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_28.png");
+  }
+  74.36% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_29.png");
+  }
+  76.92% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_30.png");
+  }
+  79.49% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_31.png");
+  }
+  82.05% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_32.png");
+  }
+  84.62% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_33.png");
+  }
+  87.18% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_34.png");
+  }
+  89.74% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_35.png");
+  }
+  92.31% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_36.png");
+  }
+  94.87% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_37.png");
+  }
+  97.44% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_38.png");
+  }
+  100% {
+    background-image: url("../images/Animations/ZombieCircle/xunhuan_39.png");
+  }
+}
+
+.main-zombie-circle-animation {
+  position: absolute;
+  width: 508px;
+  height: 596px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -40%);
+  /* background-image: url("../images/Animations/ZombieCircle/xunhuan_00.png"); */
+  background-size: contain;
+  /* opacity: 0; */
+  &.show {
+    animation: zombieCircle 1.33s steps(40) infinite;
+    /* opacity: 1; */
+  }
 }
 
 @keyframes zombieOpen {
@@ -352,11 +502,17 @@
   position: absolute;
   width: 508px;
   height: 596px;
-  bottom: 0;
-  left: 290px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -40%);
   background-image: url("../images/Animations/ZombieOpen/kaiji_20.png");
   background-size: contain;
-  animation: zombieClose 1s steps(20);
+  &.show {
+    animation: zombieClose 0.66s steps(20);
+  }
+  &.hidden {
+    opacity: 0;
+  }
 }
 
 @keyframes pillars {
@@ -453,12 +609,10 @@
 }
 .main-pillars {
   position: absolute;
-  left: 112px;
-  top: -2px;
+  left: 10%;
+  top: 4%;
 }
 .main-pillars-animation {
-  /* width: 315px;
-  height: 423px; */
   width: 349px;
   height: 432px;
   background-size: contain;
@@ -470,11 +624,8 @@
 
 .main-pillars-base {
   position: absolute;
-  /* bottom: -238px; */
   bottom: -180px;
   background-image: url("../images/backgrounds/pillars_base.png");
-  /* width: 314px;
-  height: 372px; */
   width: 343px;
   height: 303px;
   background-size: contain;
@@ -482,15 +633,32 @@
   z-index: -1;
 }
 
-.lighting-animation {
+.lighting-animation-right {
   position: absolute;
-  right: 300px;
-  background-image: url("../images/Animations/Lighting/glow_00.png");
+  right: 10%;
+  top: 16%;
+  transform: rotate(-45deg);
   width: 632px;
   height: 402px;
   background-size: contain;
   background-repeat: no-repeat;
-  animation: lighting 5s steps(23) infinite;
+  &.show {
+    animation: lighting 1.5s steps(23);
+  }
+}
+
+.lighting-animation-left {
+  position: absolute;
+  left: 16%;
+  top: 16%;
+  transform: rotate(45deg);
+  width: 632px;
+  height: 402px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  &.show {
+    animation: lighting 1.5s steps(23);
+  }
 }
 
 @keyframes lighting {
@@ -631,149 +799,6 @@
   }
   97.83% {
     background-image: url("../images/Animations/Lighting/glow_45.png");
-  }
-  100% {
-    background-image: url("../images/Animations/Lighting/glow_45.png");
-  }
-}
-
-@keyframes lightingIn {
-  0% {
-    background-image: url("../images/Animations/Lighting/glow_00.png");
-  }
-  4.35% {
-    background-image: url("../images/Animations/Lighting/glow_01.png");
-  }
-  8.7% {
-    background-image: url("../images/Animations/Lighting/glow_02.png");
-  }
-  13.04% {
-    background-image: url("../images/Animations/Lighting/glow_03.png");
-  }
-  17.39% {
-    background-image: url("../images/Animations/Lighting/glow_04.png");
-  }
-  21.74% {
-    background-image: url("../images/Animations/Lighting/glow_05.png");
-  }
-  26.09% {
-    background-image: url("../images/Animations/Lighting/glow_06.png");
-  }
-  30.43% {
-    background-image: url("../images/Animations/Lighting/glow_07.png");
-  }
-  34.78% {
-    background-image: url("../images/Animations/Lighting/glow_08.png");
-  }
-  39.13% {
-    background-image: url("../images/Animations/Lighting/glow_09.png");
-  }
-  43.48% {
-    background-image: url("../images/Animations/Lighting/glow_10.png");
-  }
-  47.83% {
-    background-image: url("../images/Animations/Lighting/glow_11.png");
-  }
-  52.17% {
-    background-image: url("../images/Animations/Lighting/glow_12.png");
-  }
-  56.52% {
-    background-image: url("../images/Animations/Lighting/glow_13.png");
-  }
-  60.87% {
-    background-image: url("../images/Animations/Lighting/glow_14.png");
-  }
-  65.22% {
-    background-image: url("../images/Animations/Lighting/glow_15.png");
-  }
-  69.57% {
-    background-image: url("../images/Animations/Lighting/glow_16.png");
-  }
-  73.91% {
-    background-image: url("../images/Animations/Lighting/glow_17.png");
-  }
-  78.26% {
-    background-image: url("../images/Animations/Lighting/glow_18.png");
-  }
-  82.61% {
-    background-image: url("../images/Animations/Lighting/glow_19.png");
-  }
-  86.96% {
-    background-image: url("../images/Animations/Lighting/glow_20.png");
-  }
-  91.3% {
-    background-image: url("../images/Animations/Lighting/glow_21.png");
-  }
-  100% {
-    background-image: url("../images/Animations/Lighting/glow_22.png");
-  }
-}
-@keyframes lightingOut {
-  0% {
-    background-image: url("../images/Animations/Lighting/glow_23.png");
-  }
-  4.35% {
-    background-image: url("../images/Animations/Lighting/glow_24.png");
-  }
-  8.7% {
-    background-image: url("../images/Animations/Lighting/glow_25.png");
-  }
-  13.04% {
-    background-image: url("../images/Animations/Lighting/glow_26.png");
-  }
-  17.39% {
-    background-image: url("../images/Animations/Lighting/glow_27.png");
-  }
-  21.74% {
-    background-image: url("../images/Animations/Lighting/glow_28.png");
-  }
-  26.09% {
-    background-image: url("../images/Animations/Lighting/glow_29.png");
-  }
-  30.43% {
-    background-image: url("../images/Animations/Lighting/glow_30.png");
-  }
-  34.78% {
-    background-image: url("../images/Animations/Lighting/glow_31.png");
-  }
-  39.13% {
-    background-image: url("../images/Animations/Lighting/glow_32.png");
-  }
-  43.48% {
-    background-image: url("../images/Animations/Lighting/glow_33.png");
-  }
-  47.83% {
-    background-image: url("../images/Animations/Lighting/glow_34.png");
-  }
-  52.17% {
-    background-image: url("../images/Animations/Lighting/glow_35.png");
-  }
-  56.52% {
-    background-image: url("../images/Animations/Lighting/glow_36.png");
-  }
-  60.87% {
-    background-image: url("../images/Animations/Lighting/glow_37.png");
-  }
-  65.22% {
-    background-image: url("../images/Animations/Lighting/glow_38.png");
-  }
-  69.57% {
-    background-image: url("../images/Animations/Lighting/glow_39.png");
-  }
-  73.91% {
-    background-image: url("../images/Animations/Lighting/glow_40.png");
-  }
-  78.26% {
-    background-image: url("../images/Animations/Lighting/glow_41.png");
-  }
-  82.61% {
-    background-image: url("../images/Animations/Lighting/glow_42.png");
-  }
-  86.96% {
-    background-image: url("../images/Animations/Lighting/glow_43.png");
-  }
-  91.3% {
-    background-image: url("../images/Animations/Lighting/glow_44.png");
   }
   100% {
     background-image: url("../images/Animations/Lighting/glow_45.png");

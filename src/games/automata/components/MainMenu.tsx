@@ -44,6 +44,12 @@ interface Props {
 }
 
 const MainMenu = ({ localTimer }: Props) => {
+  const lightingLeftRef = useRef<HTMLDivElement>(null);
+  const lightingRightRef = useRef<HTMLDivElement>(null);
+  const discRef = useRef<HTMLDivElement>(null);
+  const zombieOpenRef = useRef<HTMLDivElement>(null);
+  const zombieCloseRef = useRef<HTMLDivElement>(null);
+  const zombieCircleRef = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const l2account = useAppSelector(selectL2Account);
   const uIState = useAppSelector(selectUIState);
@@ -107,6 +113,7 @@ const MainMenu = ({ localTimer }: Props) => {
               if (queryState.fulfilled.match(action)) {
                 dispatch(setUIState({ uIState: UIState.Idle }));
                 dispatch(clearRebootCreature({}));
+                triggerAnimation();
               } else {
                 dispatch(setUIState({ uIState: UIState.Idle }));
                 dispatch(clearRebootCreature({}));
@@ -133,14 +140,88 @@ const MainMenu = ({ localTimer }: Props) => {
       : selectSelectedCreatureCurrentProgram(localTimer)
   );
 
+  const triggerAnimation = () => {
+    // 控制动画顺序
+    setTimeout(() => {
+      discRef?.current?.classList?.add("show");
+    }, 0);
+    setTimeout(() => {
+      lightingRightRef?.current?.classList?.add("show");
+    }, 0);
+
+    setTimeout(() => {
+      zombieOpenRef.current?.classList.add("show");
+    }, 700);
+
+    setTimeout(() => {
+      zombieCircleRef.current?.classList.add("show");
+    }, 1400);
+
+    setTimeout(() => {
+      lightingLeftRef?.current?.classList?.add("show");
+    }, 4470);
+
+    setTimeout(() => {
+      zombieCircleRef.current?.classList.remove("show");
+      zombieCloseRef.current?.classList.add("show");
+    }, 5370);
+  };
+
   return (
     <>
       <div className="main">
-        <div className="lighting-animation" />
+        {/* <div className="main-zombie-open-animation" /> */}
         <div className="main-pillars">
           <div className="main-pillars-base" />
           <div className="main-pillars-animation" />
         </div>
+        <div
+          ref={lightingRightRef}
+          className={`lighting-animation-right`}
+          onAnimationEnd={() => {
+            lightingRightRef?.current?.classList?.remove("show");
+          }}
+        />
+        <div
+          ref={zombieOpenRef}
+          className={`main-zombie-open-animation`}
+          onAnimationEnd={() => {
+            zombieOpenRef?.current?.classList?.remove("show");
+            zombieOpenRef?.current?.classList?.add("hidden");
+            // if (zombieRef.current) {
+            //   zombieRef.current.className = "main-zombie-open-animation";
+            // }
+          }}
+        />
+        <div
+          ref={zombieCloseRef}
+          className={`main-zombie-close-animation`}
+          onAnimationEnd={() => {
+            zombieCloseRef?.current?.classList?.remove("show");
+            zombieOpenRef?.current?.classList?.remove("hidden");
+            // if (zombieRef.current) {
+            //   zombieRef.current.className = "main-zombie-open-animation";
+            // }
+          }}
+        />
+        <div
+          ref={zombieCircleRef}
+          className={`main-zombie-circle-animation`}
+          onAnimationEnd={() => {
+            // zombieCircleRef?.current?.classList?.remove("show");
+            // if (zombieRef.current) {
+            //   zombieRef.current.className = "main-zombie-open-animation";
+            // }
+          }}
+        />
+        <div
+          ref={lightingLeftRef}
+          className={`lighting-animation-left`}
+          onAnimationEnd={() => {
+            lightingLeftRef?.current?.classList?.remove("show");
+          }}
+        />
+
         <Rocket />
         {!isNotSelectingCreature && (
           <div className="main-content">
@@ -150,9 +231,13 @@ const MainMenu = ({ localTimer }: Props) => {
               />
             </div>
             <div className="main-circle-container">
-              {/* {!isSelectingUIState && (
-                <div className="main-circle-container-new"></div>
-              )} */}
+              <div
+                ref={discRef}
+                className={`main-circle-container-new`}
+                onAnimationEnd={() => {
+                  discRef?.current?.classList?.remove("show");
+                }}
+              ></div>
               <MainMenuProgressBar
                 programName={currentProgramInfo.program?.name ?? ""}
                 remainTime={currentProgramInfo.remainTime}
@@ -201,8 +286,6 @@ const MainMenu = ({ localTimer }: Props) => {
             </div>
           </div>
         )}
-        {/* <div className="main-zombie-open-animation" /> */}
-        <div className="main-zombie-close-animation" />
         {showSummaryMenu && <SummaryMenu />}
       </div>
     </>
