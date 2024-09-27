@@ -20,20 +20,20 @@
 .top-left {
   width: 961px;
   height: 110px;
-  background-image: url("../images/backgrounds/top_left_new.png");
+  background-image: url("../images/backgrounds/top_left.png");
   background-repeat: no-repeat;
 }
 
 .top-right {
   width: 961px;
   height: 110px;
-  background-image: url("../images/backgrounds/top_right_new.png");
+  background-image: url("../images/backgrounds/top_right.png");
   background-repeat: no-repeat;
 }
 
 .top-middle {
   flex-grow: 1;
   height: 110px;
-  /* background-image: url("../images/backgrounds/top_mid.png"); */
+  background-image: url("../images/backgrounds/top_mid.png");
   background-repeat: repeat-x;
 }

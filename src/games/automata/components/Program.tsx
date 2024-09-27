@@ -25,6 +25,7 @@ const Program = ({ program, onSelect }: Props) => {
       <img
         src={getProgramIconPath(program.type)}
         className="program-icon-image"
+        onClick={onSelect}
       />
       <div className="program-resource-grid">
         <Grid

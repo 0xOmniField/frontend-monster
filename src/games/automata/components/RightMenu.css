@@ -15,7 +15,7 @@
 }
 .new_right_top {
   position: absolute;
-  top: 40px;
+  top: 30px;
   left: 50%;
   margin-left: -60.8px;
   width: 124px;
@@ -55,7 +55,7 @@
   transform: translate(-50%, -50%);
   width: 175px;
   height: calc(100% - 110px);
-  top: 53%;
+  top: 52%;
   left: 50%;
   background-image: url("../images/backgrounds/side_inside_bg.png");
   background-repeat: no-repeat;
@@ -72,10 +72,11 @@
 
 .right-program-page-selector {
   position: absolute;
-  width: 170px;
-  height: 40px;
-  bottom: 0px;
-  left: 20px;
+  width: 134px;
+  height: 25px;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -33%;
 }
 
 .right-corner-bar {
