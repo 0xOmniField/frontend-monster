@@ -282,17 +282,17 @@
 
 .main-zombie-close-animation {
   position: absolute;
-  width: 508px;
-  height: 596px;
+  width: 457px;
+  height: 749px;
   top: 50%;
   left: 50%;
   transform: translate(-40%, -40%);
   /* background-image: url("../images/Animations/ZombieClose/guanji_00.png"); */
-  background-size: contain;
-  /* opacity: 0; */
+  background-size: auto 80%;
+  background-repeat: no-repeat;
+  background-position: center;
   &.show {
     animation: zombieClose 0.66s steps(20);
-    /* opacity: 1; */
   }
 }
 
@@ -421,16 +421,16 @@
 
 .main-zombie-circle-animation {
   position: absolute;
-  width: 508px;
-  height: 596px;
+  width: 457px;
+  height: 749px;
   top: 50%;
   left: 50%;
   transform: translate(-40%, -40%);
-  background-size: contain;
-  /* opacity: 0; */
+  background-size: auto 80%;
+  background-repeat: no-repeat;
+  background-position: center;
   &.show {
     animation: zombieCircle 1.33s steps(40) infinite;
-    /* opacity: 1; */
   }
 }
 
@@ -499,13 +499,16 @@
 
 .main-zombie-open-animation {
   position: absolute;
-  width: 508px;
-  height: 596px;
+  width: 457px;
+  height: 749px;
   top: 50%;
   left: 50%;
   transform: translate(-40%, -40%);
   background-image: url("../images/Animations/ZombieOpen/kaiji_20.png");
-  background-size: contain;
+  background-size: auto 80%;
+  /* background-position: ; */
+  background-repeat: no-repeat;
+  background-position: center;
   &.show {
     /* animation: zombieClose 0.66s steps(20); */
     animation: zombieOpen 0.66s steps(20) forwards,
@@ -612,8 +615,8 @@
   top: 4%;
 }
 .main-pillars-animation {
-  width: 349px;
-  height: 432px;
+  width: 503px;
+  height: 686px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -623,10 +626,10 @@
 
 .main-pillars-base {
   position: absolute;
-  bottom: -180px;
+  top: 479px;
   background-image: url("../images/backgrounds/pillars_base.png");
-  width: 343px;
-  height: 303px;
+  width: 503px;
+  height: 372px;
   background-size: contain;
   background-repeat: no-repeat;
   z-index: -1;

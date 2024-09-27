@@ -1,8 +1,8 @@
 import React from "react";
 import ImageButton from "./ImageButton";
-import programButtonImage from "../../images/Buttons/Program/program_button_new.png";
-import programButtonHoverImage from "../../images/Buttons/Program/program_hover_new.png";
-import programButtonClickImage from "../../images/Buttons/Program/program_click_new.png";
+import programButtonImage from "../../images/Buttons/Program/program_button.png";
+import programButtonHoverImage from "../../images/Buttons/Program/program_hover.png";
+import programButtonClickImage from "../../images/Buttons/Program/program_click.png";
 import "./ProgramButton.css";
 
 interface Props {
