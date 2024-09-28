@@ -2,7 +2,7 @@ import React from "react";
 import "./WelcomePage.css";
 import PlayButton from "./Buttons/PlayButton";
 import WelcomePageProgressBar from "./WelcomePageProgressBar";
-
+import ConnectButtonRain from "../../../components/connectButton";
 interface Props {
   progress: number;
   message: string;
@@ -14,7 +14,8 @@ const WelcomePage = ({ progress, message, onClick }: Props) => {
     <div className="welcome-page-container">
       <div className="welcome-page-background"></div>
       <div className="welcome-page-play-button">
-        <PlayButton onClick={onClick} />
+        {/* <PlayButton onClick={onClick} /> */}
+        <ConnectButtonRain onSign={onClick} />
       </div>
       {progress > 0 ? (
         <>
