@@ -66,8 +66,10 @@
 .right-program-filter-bar-position {
   position: absolute;
   top: 50%;
-  left: -10px;
+  left: -32px;
   transform: translate(-50%, -50%);
+  height: 682.27px;
+  width: 70px;
 }
 
 .right-program-page-selector {

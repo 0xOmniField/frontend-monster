@@ -2,6 +2,8 @@ import React from "react";
 import "./ProgramFilterButton.css";
 import selectingBackground from "../images/backgrounds/tab_select.png";
 import background from "../images/backgrounds/tab.png";
+import allSelectingBackground from "../images/backgrounds/all_tab_select.png";
+import allBackground from "../images/backgrounds/all_tab.png";
 
 interface Props {
   isSelected: boolean;
@@ -18,11 +20,24 @@ const ProgramFilterButton = ({
 }: Props) => {
   return (
     <div className="program-filter-bar-filter-container" onClick={onClick}>
-      <img
-        src={selectingBackground}
-        className="program-filter-bar-filter-selecting-background"
-      />
-      {isSelected ? null : (
+      {text ? (
+        <img
+          src={allSelectingBackground}
+          className="program-filter-bar-filter-selecting-background"
+        />
+      ) : (
+        <img
+          src={selectingBackground}
+          className="program-filter-bar-filter-selecting-background"
+        />
+      )}
+
+      {isSelected ? null : text ? (
+        <img
+          src={allBackground}
+          className="program-filter-bar-filter-background"
+        />
+      ) : (
         <img
           src={background}
           className="program-filter-bar-filter-background"

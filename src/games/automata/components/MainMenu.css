@@ -22,7 +22,7 @@
   height: 512px;
   width: 550px;
   position: absolute;
-  right: 36px;
+  right: 112px;
   top: 88px;
 }
 
@@ -626,7 +626,7 @@
 
 .main-pillars-base {
   position: absolute;
-  top: 479px;
+  top: 68%;
   background-image: url("../images/backgrounds/pillars_base.png");
   width: 503px;
   height: 372px;
@@ -646,6 +646,19 @@
   background-repeat: no-repeat;
   &.show {
     animation: lighting 1.5s steps(23);
+  }
+}
+@media (max-width: 1920px) {
+  .main-pillars {
+    top: -10%;
+    transform: scale(0.8);
+  }
+}
+@media (max-width: 1720px) {
+  .main-pillars {
+    top: -10%;
+    left: 0;
+    transform: scale(0.7);
   }
 }
 
