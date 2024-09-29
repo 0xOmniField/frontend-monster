@@ -48,6 +48,7 @@ module.exports = function override(config, env) {
 
   const wasmExtensionRegExp = /\.wasm$/;
   config.resolve.extensions.push(".wasm");
+  config.resolve.extensions.push(".atlas");
 
   config.experiments = {
     asyncWebAssembly: true,
@@ -65,6 +66,10 @@ module.exports = function override(config, env) {
     resolve: {
       fullySpecified: false, // disable the behavior
     },
+  });
+  config.module.rules.push({
+    test: /\.atlas$/,
+    use: "raw-loader",
   });
 
   return config;

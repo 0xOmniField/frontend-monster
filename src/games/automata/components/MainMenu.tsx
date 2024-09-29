@@ -15,6 +15,8 @@ import {
   getCreatureIconPath,
   ProgramInfo,
 } from "../../../data/automata/models";
+import atlasData from "../images/Animations/Zombie/jiangshi.atlas";
+import spineJsonData from "../images/Animations/Zombie/jiangshi.json";
 import {
   UIState,
   selectIsLoading,
@@ -39,6 +41,7 @@ import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import MainMenuWarning from "./MainMenuWarning";
 import MainMenuProgressBar from "./MainMenuProgressBar";
 import SummaryMenu from "./SummaryMenu";
+// import SpineAnimation from "../../../components/SpineAnimation";
 
 interface Props {
   localTimer: number;
@@ -200,6 +203,11 @@ const MainMenu = ({ localTimer }: Props) => {
           }}
         />
         <div ref={zombieRef} className={`main-zombie-open-animation`} />
+        {/* <SpineAnimation
+        // atlasData={atlasData}
+        // spineJsonData={spineJsonData}
+        // animationName={"zombie"}
+        /> */}
         <div
           ref={lightingLeftRef}
           className={`lighting-animation-left`}
