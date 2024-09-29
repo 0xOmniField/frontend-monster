@@ -15,8 +15,6 @@ import {
   getCreatureIconPath,
   ProgramInfo,
 } from "../../../data/automata/models";
-import atlasData from "../images/Animations/Zombie/jiangshi.atlas";
-import spineJsonData from "../images/Animations/Zombie/jiangshi.json";
 import {
   UIState,
   selectIsLoading,
