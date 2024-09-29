@@ -1,7 +1,8 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { withBrowserConnector } from "web3subscriber/src/client";
-import { DelphinusBrowserConnector} from 'web3subscriber/src/provider';
+import { DelphinusBrowserConnector } from "web3subscriber/src/provider";
 import { signMessage } from "../utils/address";
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 
 export interface L1AccountInfo {
   address: string;
@@ -22,23 +23,22 @@ async function loginL1Account() {
   return await withBrowserConnector(async (web3: DelphinusBrowserConnector) => {
     const i = await web3.getJsonRpcSigner();
     return {
-        address: await i.getAddress(),
-        chainId: (await web3.getNetworkId()).toString()
-    }
+      address: await i.getAddress(),
+      chainId: (await web3.getNetworkId()).toString(),
+    };
   });
 }
 
 async function loginL2Account(address: string): Promise<L2AccountInfo> {
-  const str:string = await signMessage(address);
+  const str: string = await signMessage(address);
   console.log("signed result", str);
-  return new L2AccountInfo(str.substring(0,34));
+  return new L2AccountInfo(str.substring(0, 34));
 }
-
 
 export interface AccountState {
   l1Account?: L1AccountInfo;
   l2account?: L2AccountInfo;
-  status: 'Loading' | 'Ready';
+  status: "Loading" | "Ready";
 }
 
 export interface State {
@@ -46,7 +46,7 @@ export interface State {
 }
 
 const initialState: AccountState = {
-  status: 'Loading',
+  status: "Loading",
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -55,7 +55,7 @@ const initialState: AccountState = {
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
 export const loginL1AccountAsync = createAsyncThunk(
-  'acccount/fetchAccount',
+  "acccount/fetchAccount",
   async (thunkApi) => {
     const account = await loginL1Account();
     //const l2account = await loginL2Account(account.address);
@@ -64,44 +64,50 @@ export const loginL1AccountAsync = createAsyncThunk(
 );
 
 export const loginL2AccountAsync = createAsyncThunk(
-  'acccount/deriveL2Account',
-  async (l1account:L1AccountInfo,  thunkApi) => {
+  "acccount/deriveL2Account",
+  async (l1account: L1AccountInfo, thunkApi) => {
     const l2account = await loginL2Account(l1account.address);
     return l2account;
   }
 );
 
 export const accountSlice = createSlice({
-  name: 'account',
+  name: "account",
   initialState,
   reducers: {
     setL1Account: (state, account) => {
       state.l1Account!.address = account.payload;
-    }
+    },
+    setL1AllAccount: (state, account) => {
+      state.l1Account = account.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(loginL1AccountAsync.pending, (state) => {
-        state.status = 'Loading';
+        state.status = "Loading";
       })
       .addCase(loginL1AccountAsync.fulfilled, (state, c) => {
-        state.status = 'Ready';
+        state.status = "Ready";
         console.log(c);
         state.l1Account = c.payload;
       })
       .addCase(loginL2AccountAsync.pending, (state) => {
-        state.status = 'Loading';
+        state.status = "Loading";
       })
       .addCase(loginL2AccountAsync.fulfilled, (state, c) => {
-        state.status = 'Ready';
+        state.status = "Ready";
         console.log(c);
         state.l2account = c.payload;
-      })
+      });
   },
 });
-
-export const selectL1Account = <T extends State>(state: T) => state.account.l1Account;
-export const selectL2Account = <T extends State>(state: T) => state.account.l2account;
-export const selectLoginStatus = <T extends State>(state: T) => state.account.status;
+export const { setL1AllAccount } = accountSlice.actions;
+export const selectL1Account = <T extends State>(state: T) =>
+  state.account.l1Account;
+export const selectL2Account = <T extends State>(state: T) =>
+  state.account.l2account;
+export const selectLoginStatus = <T extends State>(state: T) =>
+  state.account.status;
 
 export default accountSlice.reducer;

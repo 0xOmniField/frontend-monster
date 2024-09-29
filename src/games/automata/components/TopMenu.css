@@ -33,7 +33,7 @@
 
 .top-middle {
   flex-grow: 1;
-  height: 110px;
+  height: 100px;
   background-image: url("../images/backgrounds/top_mid.png");
   background-repeat: repeat-x;
 }
