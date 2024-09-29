@@ -2,7 +2,7 @@ import React from "react";
 import "./WelcomePage.css";
 import PlayButton from "./Buttons/PlayButton";
 import WelcomePageProgressBar from "./WelcomePageProgressBar";
-import ConnectButtonRain from "../../../components/ConnectButton";
+import ConnectButtonRain from "../../../components/connectButton";
 interface Props {
   progress: number;
   message: string;
