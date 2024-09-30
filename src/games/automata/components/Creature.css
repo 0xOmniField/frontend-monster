@@ -30,9 +30,12 @@
   position: absolute;
   top: 35%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%);
   width: 55px;
-  height: 55px;
+  height: 55px; */
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 32px;
+  height: 53px;
 }
 
 .creature-image {

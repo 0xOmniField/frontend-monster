@@ -31,11 +31,14 @@
 .main-progress-bot-creating-image,
 .main-progress-bot-creating-animation-image {
   position: absolute;
-  width: 70%;
-  height: 70%;
+  /* width: 70%;
+  height: 70%; */
   top: 37%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 32px;
+  height: 53px;
 }
 
 .main-progress-bot-creating-image {
