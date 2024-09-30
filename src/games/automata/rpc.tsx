@@ -2,7 +2,7 @@ import axios from "axios";
 import { sign, query } from "./sign";
 
 const instance = axios.create({
-  baseURL: "http://124.243.187.118:8085",
+  baseURL: "https://tzkserver.omnifield.xyz",
   headers: { "Content-Type": "application/json" },
 });
 
