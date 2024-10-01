@@ -2,12 +2,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations: {}
+  annotations:
+    k8s.kuboard.cn/displayName: frontend-monster
   labels:
     k8s.kuboard.cn/name: frontend-monster
   name: frontend-monster
   namespace: default
-  resourceVersion: '3817000'
+  resourceVersion: '66646'
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -28,11 +29,11 @@ spec:
     spec:
       containers:
         - image: >-
-            registry.eu-central-1.aliyuncs.com/omnifiled/frontend-monster:{{IMAGE_VERSION}}
+            registry-vpc.cn-hongkong.aliyuncs.com/omni-new/frontend-monster:{{IMAGE_VERSION}}
           imagePullPolicy: IfNotPresent
           name: frontend-monster
           ports:
-            - containerPort: 3000
+            - containerPort: 80
               name: http
               protocol: TCP
           resources: {}
@@ -40,7 +41,7 @@ spec:
           terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       imagePullSecrets:
-        - name: ali-deguo-hub
+        - name: ali-hk-vpc
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
@@ -55,27 +56,23 @@ metadata:
     k8s.kuboard.cn/name: frontend-monster
   name: frontend-monster
   namespace: default
-  resourceVersion: '3824370'
+  resourceVersion: '37826'
 spec:
-  clusterIP: 10.43.75.97
+  clusterIP: 10.43.96.9
   clusterIPs:
-    - 10.43.75.97
+    - 10.43.96.9
   internalTrafficPolicy: Cluster
   ipFamilies:
     - IPv4
   ipFamilyPolicy: SingleStack
   ports:
     - name: http
-      port: 3000
+      port: 80
       protocol: TCP
-      targetPort: 3000
-  publishNotReadyAddresses: true
+      targetPort: 80
   selector:
     k8s.kuboard.cn/name: frontend-monster
-  sessionAffinity: ClientIP
-  sessionAffinityConfig:
-    clientIP:
-      timeoutSeconds: 10800
+  sessionAffinity: None
   type: ClusterIP
 
 ---
@@ -87,13 +84,8 @@ metadata:
     k8s.kuboard.cn/name: frontend-monster
   name: frontend-monster
   namespace: default
-  resourceVersion: '3824372'
+  resourceVersion: '37829'
 spec:
-  defaultBackend:
-    service:
-      name: frontend-monster
-      port:
-        number: 3000
   ingressClassName: nginx
   rules:
     - host: monster.omnifield.xyz
@@ -103,7 +95,11 @@ spec:
               service:
                 name: frontend-monster
                 port:
-                  number: 3000
+                  number: 80
             path: /
             pathType: Prefix
+  tls:
+    - hosts:
+        - monster.omnifield.xyz
+      secretName: omnifield.xyz
 
