@@ -206,7 +206,7 @@ const ResourceAnimations = ({ localTimer }: Props) => {
             changeAmount={prop.entity.amount}
           />
         ))}
-      {gainTitaniumAnimationDelayTime && (
+      {gainTitaniumAnimationDelayTime !== 0 && (
         <GainTitaniumResource
           animationIndex={animationIndex}
           delayTime={gainTitaniumAnimationDelayTime}
