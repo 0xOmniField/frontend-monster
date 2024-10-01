@@ -106,7 +106,6 @@ export function GameController() {
   };
 
   const account = useAppSelector(selectL1Account);
-  console.log(11111, account);
 
   if (l2account && uIState >= UIState.Idle) {
     return <Gameplay />;

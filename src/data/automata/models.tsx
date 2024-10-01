@@ -376,54 +376,54 @@ export function getProgramComponent(
   }
 
   switch (program.type) {
-    case ProgramType.QuantumScribe:
-      return <QuantumScribe showAnimation={showAnimation} />;
+    // case ProgramType.QuantumScribe:
+    //   return <QuantumScribe showAnimation={showAnimation} />;
     case ProgramType.QuantumFrost:
       return <QuantumFrost showAnimation={showAnimation} />;
-    case ProgramType.QuantumSurge:
-      return <QuantumSurge showAnimation={showAnimation} />;
-    case ProgramType.QuantaForge:
-      return <QuantaForge showAnimation={showAnimation} />;
-    case ProgramType.Aespa:
-      return <Aespa showAnimation={showAnimation} />;
+    // case ProgramType.QuantumSurge:
+    //   return <QuantumSurge showAnimation={showAnimation} />;
+    // case ProgramType.QuantaForge:
+    //   return <QuantaForge showAnimation={showAnimation} />;
+    // case ProgramType.Aespa:
+    //   return <Aespa showAnimation={showAnimation} />;
     case ProgramType.BioGen:
       return <BioGen showAnimation={showAnimation} />;
-    case ProgramType.BioFusion:
-      return <BioFusion showAnimation={showAnimation} />;
+    // case ProgramType.BioFusion:
+    //   return <BioFusion showAnimation={showAnimation} />;
     case ProgramType.AstroMine:
       return <AstroMine showAnimation={showAnimation} />;
-    case ProgramType.TitaniumBoost:
-      return <TitaniumBoost showAnimation={showAnimation} />;
-    case ProgramType.QuantumLeap:
-      return <QuantumLeap showAnimation={showAnimation} />;
-    case ProgramType.BioSurge:
-      return <BioSurge showAnimation={showAnimation} />;
-    case ProgramType.BioHarvest:
-      return <BioHarvest showAnimation={showAnimation} />;
+    // case ProgramType.TitaniumBoost:
+    //   return <TitaniumBoost showAnimation={showAnimation} />;
+    // case ProgramType.QuantumLeap:
+    //   return <QuantumLeap showAnimation={showAnimation} />;
+    // case ProgramType.BioSurge:
+    //   return <BioSurge showAnimation={showAnimation} />;
+    // case ProgramType.BioHarvest:
+    //   return <BioHarvest showAnimation={showAnimation} />;
     case ProgramType.EnerGex:
       return <EnerGex showAnimation={showAnimation} />;
-    case ProgramType.EtherWeave:
-      return <EtherWeave showAnimation={showAnimation} />;
-    case ProgramType.BioCast:
-      return <BioCast showAnimation={showAnimation} />;
-    case ProgramType.AstroCharge:
-      return <AstroCharge showAnimation={showAnimation} />;
-    case ProgramType.BioSynthesis:
-      return <BioSynthesis showAnimation={showAnimation} />;
+    // case ProgramType.EtherWeave:
+    //   return <EtherWeave showAnimation={showAnimation} />;
+    // case ProgramType.BioCast:
+    //   return <BioCast showAnimation={showAnimation} />;
+    // case ProgramType.AstroCharge:
+    //   return <AstroCharge showAnimation={showAnimation} />;
+    // case ProgramType.BioSynthesis:
+    //   return <BioSynthesis showAnimation={showAnimation} />;
     case ProgramType.XenoFloral:
       return <XenoFloral showAnimation={showAnimation} />;
     case ProgramType.FoamTap:
       return <FoamTap showAnimation={showAnimation} />;
     case ProgramType.CrystaBloom:
       return <CrystaBloom showAnimation={showAnimation} />;
-    case ProgramType.EnerGate:
-      return <EnerGate showAnimation={showAnimation} />;
+    // case ProgramType.EnerGate:
+    //   return <EnerGate showAnimation={showAnimation} />;
     case ProgramType.EnerFusion:
       return <EnerFusion showAnimation={showAnimation} />;
-    case ProgramType.QuantumCore:
-      return <QuantumCore showAnimation={showAnimation} />;
-    case ProgramType.XenoBloom:
-      return <XenoBloom showAnimation={showAnimation} />;
+    // case ProgramType.QuantumCore:
+    //   return <QuantumCore showAnimation={showAnimation} />;
+    // case ProgramType.XenoBloom:
+    //   return <XenoBloom showAnimation={showAnimation} />;
   }
 
   return <BioGen showAnimation={showAnimation} />;
