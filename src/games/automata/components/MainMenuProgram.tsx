@@ -60,7 +60,8 @@ const MainMenuProgram = ({
             : "main-bot-program-normal-container"
         }
       >
-        {getProgramComponent(program, isCurrent && !isStop)}
+        {/* {getProgramComponent(program, isCurrent && !isStop)} */}
+        {getProgramComponent(program, false)}
       </div>
     </div>
   );
