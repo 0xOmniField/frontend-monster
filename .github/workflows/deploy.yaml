@@ -41,5 +41,5 @@ jobs:
       - name: Deploy to k3s
         uses: steebchen/kubectl@master
         with:
-          config: ${{ secrets.NEKOSWAP_KUBE }}
+          config: ${{ secrets.OMNI_KUBE }}
           command: apply -f apply_testnet.yaml --force
