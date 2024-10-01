@@ -515,6 +515,9 @@
       zombieCircle 1.33s steps(40) 0.66s 3 forwards,
       zombieClose 0.66s steps(20) 4.65s forwards; /* zombieClose 延迟 6.5 秒执行 */
   }
+  &.hidden {
+    opacity: 0;
+  }
 }
 
 @keyframes pillars {
@@ -653,12 +656,18 @@
     top: -10%;
     transform: scale(0.8);
   }
+  .main-zombie-open-animation {
+    transform: scale(0.8) translate(-40%, -40%);
+  }
 }
 @media (max-width: 1720px) {
   .main-pillars {
     top: -10%;
     left: 0;
     transform: scale(0.7);
+  }
+  .main-zombie-open-animation {
+    transform: scale(0.8) translate(-50%, -40%);
   }
 }
 

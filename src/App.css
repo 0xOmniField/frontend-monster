@@ -38,10 +38,106 @@
   }
 }
 
-
 div.hide {
-  display:none;
+  display: none;
 }
 
 body {
+}
+
+.preload {
+  animation: pillars 5s steps(30) infinite;
+}
+
+@keyframes pillars {
+  0% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_00.png");
+  }
+  3.45% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_01.png");
+  }
+  6.9% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_02.png");
+  }
+  10.35% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_03.png");
+  }
+  13.8% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_04.png");
+  }
+  17.25% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_05.png");
+  }
+  20.7% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_06.png");
+  }
+  24.15% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_07.png");
+  }
+  27.6% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_08.png");
+  }
+  31.05% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_09.png");
+  }
+  34.5% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_10.png");
+  }
+  37.95% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_11.png");
+  }
+  41.4% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_12.png");
+  }
+  44.85% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_13.png");
+  }
+  48.3% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_14.png");
+  }
+  51.75% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_15.png");
+  }
+  55.2% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_16.png");
+  }
+  58.65% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_17.png");
+  }
+  62.1% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_18.png");
+  }
+  65.55% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_19.png");
+  }
+  69% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_20.png");
+  }
+  72.45% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_21.png");
+  }
+  75.9% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_22.png");
+  }
+  79.35% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_23.png");
+  }
+  82.8% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_24.png");
+  }
+  86.25% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_25.png");
+  }
+  89.7% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_26.png");
+  }
+  93.15% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_27.png");
+  }
+  96.6% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_28.png");
+  }
+  100% {
+    background-image: url("./games/automata/images/Animations/Pillars/guangzhu_29.png");
+  }
 }
