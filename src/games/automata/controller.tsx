@@ -111,13 +111,11 @@ export function GameController() {
     return <Gameplay />;
   } else {
     return (
-      <>
-        <WelcomePage
-          progress={progress}
-          message={message}
-          onClick={() => dispatch(loginL2AccountAsync(account!))}
-        />
-      </>
+      <WelcomePage
+        progress={progress}
+        message={message}
+        onClick={() => dispatch(loginL2AccountAsync(account!))}
+      />
     );
   }
 }

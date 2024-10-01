@@ -24,7 +24,12 @@ function App() {
     // dispatch(loginL1AccountAsync());
   }, [isConnected]);
 
-  return <AutomataController />;
+  return (
+    <>
+      <div className="preload" />
+      <AutomataController />
+    </>
+  );
 }
 
 export default App;

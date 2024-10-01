@@ -185,7 +185,7 @@ const MainMenu = ({ localTimer }: Props) => {
     lastProgramInfo.index,
     currentProgramInfo.index,
   ]);
-  // console.log(222, currentProgramInfo);
+
   return (
     <>
       <div className="main">
@@ -201,11 +201,7 @@ const MainMenu = ({ localTimer }: Props) => {
           }}
         />
         <div ref={zombieRef} className={`main-zombie-open-animation`} />
-        {/* <SpineAnimation
-        // atlasData={atlasData}
-        // spineJsonData={spineJsonData}
-        // animationName={"zombie"}
-        /> */}
+        <div className={`main-zombie-open-animation show hidden`} />
         <div
           ref={lightingLeftRef}
           className={`lighting-animation-left`}
